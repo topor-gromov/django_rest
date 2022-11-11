@@ -1,5 +1,4 @@
 """todo URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -19,9 +18,12 @@ from django.conf.urls import include
 from rest_framework.routers import DefaultRouter
 
 from todo_users.views import UsersModelViewSet
+from todo_project.views import ProjectModelViewSet, TODOModelViewSet
 
 router = DefaultRouter()
 router.register('users', UsersModelViewSet)
+router.register('project', ProjectModelViewSet)
+router.register('todo', TODOModelViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
